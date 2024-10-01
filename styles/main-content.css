@@ -1,0 +1,63 @@
+/* =========================== Page Header =========================== */
+.page-header {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: var(--shadow1);
+    text-align: center;
+    max-width: 1000px;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* =========================== Services List =========================== */
+.services-list {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+
+.services-list ul {
+    max-width: 1000px;
+    list-style: none;
+    padding: 25px;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow2);
+    border-radius: 15px;
+}
+
+/* Add this to main-content.css */
+.services-list li {
+    margin-bottom: 3px;
+    background-color: white;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out; /* Transition for opacity change */
+}
+
+.services-list li.faded {
+    opacity: 0.3; /* Make items near the bottom more transparent */
+}
+
+
+.services-list a {
+    text-decoration: none;
+    color: #555555;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.services-list a:hover {
+    background-color: #ff7878;
+    box-shadow: var(--shadow1);
+    transform: scale(1.05);
+    transition: .1s ease-in-out;
+}
+

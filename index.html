@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Side Navigation Bar</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <ul>
+                <div class="nav-search">
+                    <img class="icon" src="image/search.svg" alt="Search">
+                    <input type="text" class="search-box" placeholder="Search...">
+                </div>
+                <li class="nav-item" data-color="#69d2e7" data-page="views/main/services.html">
+                    <img class="icon" src="image/services.svg" alt="Services">
+                    <span class="sidebarText">Services</span>
+                </li>
+                <li class="nav-item" data-color="#bf69e7" data-page="views/main/events.html">
+                    <img class="icon" src="image/events.svg" alt="Events">
+                    <span class="sidebarText">Events</span>
+                </li>
+                <li class="nav-item" data-color="#f38630" data-page="views/main/info.html">
+                    <img class="icon" src="image/info.svg" alt="Info">
+                    <span class="sidebarText">Info</span>
+                </li>
+                <li class="nav-item" data-color="#fa6900" data-page="views/main/about.html">
+                    <img class="icon" src="image/about.svg" alt="About Us">
+                    <span class="sidebarText">About Us</span>
+                </li>
+            </ul>
+            <div class="language-select">
+                <select class="language-dropdown">
+                    <option value="en" selected>English</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Main Content Section -->
+        <div class="main-content" id="main-content"></div>
+    </div>
+
+    <script src="js/sidebar.js"></script>
+</body>
+</html>
