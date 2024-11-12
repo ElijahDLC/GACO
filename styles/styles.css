@@ -17,7 +17,7 @@ body {
     box-sizing: border-box;
 }
 
-/* =========================== Sidebar =========================== */
+/* =========================== Background (WIP) =========================== */
 .container {
     position: relative;
     display: grid;
@@ -50,6 +50,40 @@ body {
     opacity: 1; /* Fades in the new gradient */
 }
 
+.background-trees {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110vw; /* Full width */
+    transition: opacity 0.5s ease-in-out;
+    opacity: .5; /* Fully visible initially */
+    z-index: -1; /* Behind other content */
+}
+
+.background-trees.hidden {
+    opacity: 0; /* Hides trees when moving out */
+}
+
+@keyframes slideOutAndIn {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: .5;
+    }
+    50% {
+        transform: translateX(-50%) translateY(75%); /* Moves out of frame */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: .5;
+    }
+}
+
+.background-trees.animate {
+    animation: slideOutAndIn 2s ease-in-out;
+}
+
 /* =========================== Sidebar =========================== */
 .sidebar {
     grid-area: sidebar;
@@ -78,10 +112,23 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: left;
 }
 
 /* =========================== Nav Items =========================== */
+.sidebar-title{
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.logo{
+    height: 40px;
+}
+
 .nav-item {
     display: flex;
     align-items: center;
