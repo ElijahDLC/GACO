@@ -59,3 +59,31 @@ document.querySelectorAll('.nav-item').forEach(item => {
         loadContent(page);
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the trees background image
+    const treesImage = document.querySelector('.background-trees');
+
+    // Function to trigger the slide animation
+    function animateTrees() {
+        // Remove any existing animation class to reset
+        treesImage.classList.remove('animate', 'hidden');
+
+        // Add the animate class to trigger the animation
+        void treesImage.offsetWidth; // Reflow for restart animation
+        treesImage.classList.add('animate');
+
+        // Hide the image temporarily in the middle of the animation
+        setTimeout(() => treesImage.classList.add('hidden'), 1000); // Halfway point
+
+        // Show the image again at the bottom after the animation ends
+        setTimeout(() => treesImage.classList.remove('hidden'), 2000); // End of animation
+    }
+
+    // Modify each nav item to trigger the animation on click
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            animateTrees(); // Run the trees animation on nav item click
+        });
+    });
+});
